@@ -1,0 +1,322 @@
+/* styles.css */
+:root {
+    --engageli-primary: #0066FF;
+    --engageli-secondary: #666666;
+    --engageli-background: #FFFFFF;
+    --engageli-surface: #F8F9FA;
+    --engageli-border: #E5E7EB;
+    --engageli-text: #1F2937;
+    --engageli-text-secondary: #6B7280;
+    --engageli-success: #10B981;
+    --engageli-warning: #F59E0B;
+    --engageli-error: #EF4444;
+    --engageli-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --engageli-radius: 8px;
+    --engageli-font: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--engageli-font);
+    background-color: var(--engageli-background);
+    color: var(--engageli-text);
+    margin: 0;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .engageli-container {
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: calc(100vh - 56px); /* 헤더 높이를 뺀 높이 */
+    overflow-y: auto;
+  }
+  
+  .engageli-header {
+    position: sticky;
+    top: 0;
+    background: var(--engageli-background);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--engageli-border);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  
+  .engageli-header__title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--engageli-text);
+    margin: 0;
+  }
+  
+  .status-indicator {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    background: rgba(0, 102, 255, 0.1);
+    border-radius: 12px;
+    font-size: 12px;
+    color: var(--engageli-primary);
+    font-weight: 500;
+    gap: 6px;
+  }
+  
+  .status-indicator__dot {
+    width: 6px;
+    height: 6px;
+    background: var(--engageli-primary);
+    border-radius: 50%;
+  }
+  
+  .status-indicator.offline {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--engageli-error);
+  }
+  
+  .status-indicator.offline .status-indicator__dot {
+    background: var(--engageli-error);
+  }
+  
+  .offline-banner {
+    background: var(--engageli-warning);
+    color: white;
+    padding: 8px 16px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: var(--engageli-radius);
+    margin-bottom: 8px;
+    display: none;
+  }
+  
+  .emoji-section {
+    background: var(--engageli-surface);
+    border-radius: var(--engageli-radius);
+    padding: 16px;
+  }
+  
+  .emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .emoji-button {
+    background: var(--engageli-background);
+    border: 1px solid var(--engageli-border);
+    border-radius: var(--engageli-radius);
+    padding: 12px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 64px;
+  }
+  
+  .emoji-button span {
+    font-size: 14px;
+    color: var(--engageli-text-secondary);
+  }
+  
+  .emoji-button:hover {
+    border-color: var(--engageli-primary);
+    background: rgba(0, 102, 255, 0.05);
+  }
+  
+  .emoji-button.active {
+    background: rgba(0, 102, 255, 0.1);
+    border-color: var(--engageli-primary);
+  }
+  
+  .emoji-button.active span {
+    color: var(--engageli-primary);
+  }
+  
+  .feedback-section {
+    background: var(--engageli-surface);
+    border-radius: var(--engageli-radius);
+    padding: 16px;
+  }
+  
+  .feedback-input {
+    width: 100%;
+    padding: 12px;
+    background: var(--engageli-background);
+    border: 1px solid var(--engageli-border);
+    border-radius: var(--engageli-radius);
+    font-family: var(--engageli-font);
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    min-height: 80px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+  }
+  
+  .feedback-input:focus {
+    outline: none;
+    border-color: var(--engageli-primary);
+    box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.1);
+  }
+  
+  .feedback-input::placeholder {
+    color: var(--engageli-text-secondary);
+  }
+  
+  .engageli-button {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--engageli-primary);
+    color: white;
+    border: none;
+    border-radius: var(--engageli-radius);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .engageli-button:hover {
+    background: #0052CC;
+  }
+  
+  .engageli-button:disabled {
+    background: var(--engageli-text-secondary);
+    cursor: not-allowed;
+  }
+  
+  .history-section {
+    background: var(--engageli-surface);
+    border-radius: var(--engageli-radius);
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+  }
+  
+  .history-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--engageli-border);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--engageli-text-secondary);
+    background: var(--engageli-background);
+  }
+  
+  .feedback-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 0;
+  }
+  
+  .feedback-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--engageli-border);
+    background: var(--engageli-background);
+    transition: background-color 0.2s;
+  }
+  
+  .feedback-item:hover {
+    background: var(--engageli-surface);
+  }
+  
+  .feedback-item:last-child {
+    border-bottom: none;
+  }
+  
+  .feedback-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  
+  .feedback-emoji {
+    font-size: 16px;
+  }
+  
+  .feedback-time {
+    font-size: 12px;
+    color: var(--engageli-text-secondary);
+  }
+  
+  .feedback-text {
+    font-size: 14px;
+    color: var(--engageli-text);
+    margin: 0;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+  
+  .notification {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    padding: 12px;
+    border-radius: var(--engageli-radius);
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    animation: slideUp 0.3s ease;
+    z-index: 1000;
+    box-shadow: var(--engageli-shadow);
+  }
+  
+  .notification.success {
+    background: var(--engageli-success);
+  }
+  
+  .notification.error {
+    background: var(--engageli-error);
+  }
+  
+  .notification.warning {
+    background: var(--engageli-warning);
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* 스크롤바 스타일링 */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--engageli-surface);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--engageli-border);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--engageli-text-secondary);
+  }

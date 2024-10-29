@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refelctiveli_</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="engageli-header">
+    <h1 class="engageli-header__title">Refelctiveli</h1>
+    <div class="status-indicator">
+      <span class="status-indicator__dot"></span>
+      statusInClass
+    </div>
+  </header>
+
+  <div class="engageli-container">
+    <div class="offline-banner">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 3v7m0 3v-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    offlineBanner
+    </div>
+
+    <section class="emoji-section">
+      <div class="emoji-grid">
+        <button class="emoji-button" data-mood="understand" aria-label="understand">
+          😊 <span>understand</span>
+        </button>
+        <button class="emoji-button" data-mood="question" aria-label="question">
+          ❓ <span>question</span>
+        </button>
+        <button class="emoji-button" data-mood="confused" aria-label="confused">
+          😐 <span>confused</span>
+        </button>
+        <button class="emoji-button" data-mood="repeat" aria-label="repeat">
+          🔄 <span>repeat</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="feedback-section">
+      <textarea 
+        class="feedback-input"
+        placeholder="Type Feedback here"
+        maxlength="500"
+      ></textarea>
+      <button class="engageli-button" id="send-feedback" aria-label="send">
+        sendFeedback
+      </button>
+    </section>
+
+    <section class="history-section">
+      <div class="history-header">
+        history
+      </div>
+      <div class="feedback-list" id="feedback-list">
+      </div>
+    </section>
+  </div>
+
+  <template id="feedback-item-template">
+    <div class="feedback-item">
+      <div class="feedback-meta">
+        <span class="feedback-emoji"></span>
+        <span class="feedback-time"></span>
+      </div>
+      <p class="feedback-text"></p>
+    </div>
+  </template>
+
+  <script src="config.js" type="module"></script>
+  <script src="sidepanel.js" type="module"></script>
+</body>
+</html>

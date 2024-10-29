@@ -1,0 +1,53 @@
+{
+  "extensionName": {
+    "message": "Engageli 피드백"
+  },
+  "extensionDescription": {
+    "message": "Engageli 수업 중 실시간 피드백 전송 도구"
+  },
+  "headerTitle": {
+    "message": "실시간 피드백"
+  },
+  "statusInClass": {
+    "message": "수업 중"
+  },
+  "offlineBanner": {
+    "message": "오프라인 모드 - 연결 대기 중"
+  },
+  "understand": {
+    "message": "이해했어요"
+  },
+  "question": {
+    "message": "질문있어요"
+  },
+  "confused": {
+    "message": "어려워요"
+  },
+  "repeat": {
+    "message": "다시 설명해주세요"
+  },
+  "feedbackPlaceholder": {
+    "message": "추가 피드백이 있다면 입력해주세요 (선택사항)"
+  },
+  "sendFeedback": {
+    "message": "피드백 보내기"
+  },
+  "historyTitle": {
+    "message": "피드백 기록"
+  },
+  "accessibility_understand": {
+    "message": "이해했어요 피드백 보내기"
+  },
+  "accessibility_question": {
+    "message": "질문있어요 피드백 보내기"
+  },
+  "accessibility_confused": {
+    "message": "어려워요 피드백 보내기"
+  },
+  "accessibility_repeat": {
+    "message": "다시 설명해주세요 피드백 보내기"
+  },
+  "accessibility_send": {
+    "message": "선택한 피드백 전송하기"
+  }
+}
