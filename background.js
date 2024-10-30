@@ -243,25 +243,3 @@ async function saveFeedbackToLocalStorage(feedback) {
     throw error;
   }
 }
-
-// 메시지 리스너 설정
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.action === "getCaptions") {
-    // storage에서 캡션 데이터 가져오기
-    chrome.storage.local.get(['captions'], function(result) {
-      sendResponse({ captions: result.captions || [] });
-    });
-    return true; // 비동기 응답을 위해 true 반환
-  }
-});
-
-// 사이드패널이 열릴 때마다 최신 데이터로 업데이트
-chrome.sidePanel.onShown.addListener(async (panel) => {
-  // storage에서 캡션 데이터 가져오기
-  const result = await chrome.storage.local.get(['captions']);
-  // 사이드패널에 데이터 전송
-  chrome.runtime.sendMessage({
-    action: "updateCaptions",
-    captions: result.captions || []
-  });
-});
